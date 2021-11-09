@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+
+    <title>CV-Challenge</title>
+</head>
+
+<body>
+    <div class="page--container">
+        <section id="left">
+            <div class="box--container">
+                <!-- <div class="box--container--welcome">
+                    <h1>Hello There!</h1>
+                    <p>If you want to know more about my maker start scrolling...</p>
+                </div> -->
+                <div class="box--container--content">
+                    <div class="box--container--content--about">
+                        <div class="box--container--content--about-text">
+                            <h2>About Me</h2>
+
+                            <div x-data="ABOUTME_DATA">
+                                <span x-text="ABOUTME_DATA.name"></span>
+                                <span x-text="ABOUTME_DATA.surname"></span>
+                                <span x-text="ABOUTME_DATA.birthday"></span>
+                                <span x-text="ABOUTME_DATA.description"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="box--container--content--about-portrait"></div>
+                    </div>
+
+                    <div class="box--container--content--education">
+                        <h2>Education</h2>
+                        <div x-data="EDUCATION_DATA">
+                            <table>
+                                <thead>
+                                    <td>Start</td>
+                                    <td>End</td>
+                                    <td>Name</td>
+                                    <td>Description</td>
+                                    <td>Location</td>
+                                </thead>
+                                <template x-for="education in EDUCATION_DATA">
+                                    <tr>
+                                        <td x-text="education.start"></td>
+                                        <td x-text="education.end"></td>
+                                        <td x-text="education.name"></td>
+                                        <td x-text="education.description"></td>
+                                        <td x-text="education.location"></td>
+                                    </tr>
+                                </template>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box--container--content--portfolio">
+                        <h2>Portfolio</h2>
+                        <div>
+
+                            <div x-data="PROJECTS_DATA" class="box--container--content--portfolio-projects">
+                                <template x-for="project in PROJECTS_DATA">
+                                    <div class="card"
+                                        :style="`background-image: url('img/projects/${project.picture}')`">
+                                        <div class="card--text" x-text="project.type"></div>
+                                        <div class="card--text" x-text="project.name"></div>
+                                        <div class="card--text" x-text="project.description"></div>
+
+                                    </div>
+
+                                </template>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="right">
+            <div class="dog--container">
+                <div class="dog--container--top">
+                    <div class="dog--container--top--ears">
+                        <div class="dog--container--top--ears-left"></div>
+                        <div class="dog--container--top--ears-right"></div>
+                    </div>
+                    <div class="dog--container--top--face">
+                        <div class="dog--container--top--face--eyes">
+                            <div class="dog--container--top--face--eyes-ball"></div>
+                        </div>
+                        <div class="dog--container--top--face--eyes">
+                            <div class="dog--container--top--face--eyes-ball"></div>
+                        </div>
+                    </div>
+                    <div class="dog--container--top--mouth">
+                        <div class="dog--container--top--mouth-dots">
+                            <div class="dog--container--top--mouth-dots-left"></div>
+                        </div>
+                        <div class="dog--container--top--mouth--mouth">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="dog--container--top--mouth-dots">
+                            <div class="dog--container--top--mouth-dots-right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dog--container--bottom">
+                    <div class="dog--container--bottom--hands">
+                        <div class="dog--container--bottom--hands-left"></div>
+                        <div class="dog--container--bottom--hands-right"></div>
+                    </div>
+                    <div class="dog--container--bottom--scroll">
+                        <div class="dog--container--bottom--scroll-top"></div>
+                        <div class="dog--container--bottom--scroll-paper"></div>
+                    </div>
+                    <div class="dog--container--bottom--feet">
+                        <div class="dog--container--bottom--feet-left"></div>
+                        <div class="dog--container--bottom--feet-right"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <ul>
+                <li><a href="">Impressum</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script>
+        let balls = document.getElementsByClassName(
+            "dog--container--top--face--eyes-ball"
+        );
+        document.onmousemove = function () {
+            let x = (event.clientX * 50) / window.innerWidth + "%";
+            let y = (event.clientY * 200) / window.innerWidth + "%";
+
+            for (let index = 0; index < 2; index++) {
+                balls[index].style.left = x;
+                balls[index].style.top = y;
+                balls[index].style.transform =
+                    "translate(-" + x / 3 + ",-" + y / 3 + ")";
+            }
+        };
+        const ABOUTME_DATA = {
+            name: "Xaver",
+            surname: "Gruber",
+            birthday: "16.11.1992",
+            portrait: ".\\img\\portrait.jpg",
+            description: "Hi my name is Xaver and i am an aspiring Web Developer from Vienna. I love to be outside and be one with nature. When i am not sitting on my computer coding the shit out of the internet, i like to do sports like bouldering, running and any kind of exercise that focuses on the connection between body and mind.",
+        };
+
+        const SKILLS_DATA = [{
+                skill: "HTML",
+                icon: "html.svg"
+            },
+            {
+                skill: "CSS",
+                icon: "css.svg"
+            },
+            {
+                skill: "JAVASCRIPT",
+                icon: "javascript.svg"
+            },
+            {
+                skill: "JAVA",
+                icon: "java.svg"
+            },
+            {
+                skill: "SQL",
+                icon: "sql.svg"
+            },
+            {
+                skill: "ARDUINO",
+                icon: "arduino.svg"
+            }
+        ];
+
+        const EDUCATION_DATA = [{
+                start: "2021",
+                end: "2022",
+                description: "Certificate Course for Web Development",
+                name: "FH Kärnten",
+                location: "Kärnten, Austria",
+            },
+            {
+                start: "2019",
+                end: "ongoing",
+                description: "College for Information Technology",
+                name: "HTL Wien West",
+                location: "Vienna, Austria",
+            },
+            {
+                start: "2009",
+                end: "2011",
+                description: "High School",
+                name: "BRG Hegelgasse 14",
+                location: "Vienna, Austria",
+            },
+            {
+                start: "2003",
+                end: "2009",
+                description: "High School",
+                name: "BG Tulln an der Donau",
+                location: "Tulln an der Donau, Austria",
+            },
+            {
+                start: "1999",
+                end: "2003",
+                description: "Elementary School",
+                name: "Volksschule Sieghartskirchen",
+                location: "Sieghartskirchen, Austria",
+            },
+        ];
+        const PROJECTS_DATA = [{
+                type: "webapp",
+                name: "xaver.com",
+                picture: "beach.jpg",
+                description: "this is a   blabla",
+                link: "url",
+            },
+            {
+                type: "blogsite",
+                name: "nkl.com",
+                picture: "banana.jpg",
+                description: "this is a site  blabla",
+                link: "url",
+            },
+            {
+                type: "ecommerce",
+                name: "löll.com",
+                picture: "wireframing.jpg",
+                description: "this  a site  blabla",
+                link: "url",
+            },
+            {
+                type: "blogsite",
+                name: "nkl.com",
+                picture: "computer.jpg",
+                description: "this is a site  blabla",
+                link: "url",
+            },
+            {
+                type: "blogsite",
+                name: "nkl.com",
+                picture: "develop.jpg",
+                description: "this is a   blabla",
+                link: "url",
+            },
+            {
+                type: "blogsite",
+                name: "nkl.com",
+                picture: "ecommerce.jpg",
+                description: "this is a  about blabla",
+                link: "url",
+            },
+            {
+                type: "blogsite",
+                name: "nkl.com",
+                picture: "skater.jpg",
+                description: "this is a  about blabla",
+                link: "url",
+            },
+            {
+                type: "blogsite",
+                name: "nkl.com",
+                picture: "flowers.jpg",
+                description: "this is a  about blabla",
+                link: "url",
+            },
+            {
+                type: "blogsite",
+                name: "nkl.com",
+                picture: "purple.jpg",
+                description: "this is a  about blabla",
+                link: "url",
+            },
+        ];
+    </script>
+</body>
+
+</html>

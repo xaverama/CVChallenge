@@ -1,0 +1,33 @@
+/* Colors */
+
+$white:#ffffff;
+$black:black;
+$transparent:rgba(255,255,255,0.5);
+
+
+//$background--color-primary:$gold;
+$color--text-light:$white;
+$color--text-dark:$black;
+
+/* dog colors */
+$dog--red-color:#8A2846;
+$dog--orange-color:#EC5B30;
+$dog--blue-color:#99E7FB;
+$dog--pink-color:#FF9EBB;
+$dog--black-color:$black;
+$dog--lightgray-color:#E0F2E9;
+$dog--darkgray-color:#6E8894;
+$dog--greengray-color:#A8C7D1;
+
+/* typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700&display=swap');
+$font-family-main: 'Oswald', sans-serif;
+$font-family-paragraph: 'Raleway', sans-serif;
+
+/* spacing */
+
+$header-height: 256px;
+$content-width: 80vw;
+$section-height:100vh;
+$section-width:50vw;

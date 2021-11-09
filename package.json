@@ -1,0 +1,17 @@
+{
+  "name": "cvchallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass src//scss//index.scss public//index.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "alpinejs": "^3.5.0",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.43.4"
+  }
+}

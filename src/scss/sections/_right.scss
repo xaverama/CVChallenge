@@ -1,0 +1,289 @@
+.dog--container {
+    height: 640px;
+    width: 360px;
+    background-color: $dog--orange-color;
+    border-radius: 8px 8px 50px 50px;
+
+    &--top {
+        display: flex;
+        flex-direction: column;
+
+        &--ears {
+            position: relative;
+
+            &-left {
+                border-radius: 18px;
+                position: absolute;
+                height: 103px;
+                width: 200px;
+                background-color: $dog--red-color;
+                left: -60px;
+                top: -20px;
+                transform: rotate(-15deg);
+            }
+
+            &-right {
+                border-radius: 18px;
+                position: absolute;
+                height: 103px;
+                width: 200px;
+                background-color: $dog--red-color;
+                right: -60px;
+                top: -20px;
+                transform: rotate(15deg);
+            }
+        }
+
+        &--face {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+
+            &--eyes {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                top: 100px;
+                width: 100px;
+                height: 100px;
+                background-color: $dog--greengray-color;
+                border-radius: 50%;
+                overflow: hidden;
+
+                &:nth-child(2) {
+                    background-color: $dog--lightgray-color;
+                }
+
+                &-ball {
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    background-color: $dog--red-color;
+                    border-radius: 50%;
+                    border: 5px solid white;
+                }
+            }
+        }
+
+        &--mouth {
+            position: relative;
+
+            height: 50px;
+            width: 100%;
+            top: 118px;
+
+            &-dots {
+                position: relative;
+
+                &-right {
+                    position: absolute;
+                    background-color: white;
+                    left: 90px;
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                    box-shadow: -20px 20px 0px 0px white, 0px 40px 0px 0px white;
+                }
+
+                &-left {
+                    position: absolute;
+                    background-color: white;
+                    right: 90px;
+
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                    box-shadow: 20px 20px 0px 0px white, 0px 40px 0px 0px white;
+                }
+            }
+
+            &--mouth {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &>div {
+                    height: 33px;
+                    width: 33px;
+                    border-radius: 50%;
+
+                    &:first-child {
+                        background-color: $black;
+                        position: absolute;
+                        top: -30px;
+                        z-index: 2;
+                        box-shadow: 35px 35px 0px -12px black, 30px 20px 0px -12px black,
+                            20px 35px 0px -12px black, 15px 20px 0px -12px black,
+                            -35px 35px 0px -12px black, -30px 20px 0px -12px black,
+                            -20px 35px 0px -12px black, -15px 20px 0px -12px black;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: $white;
+                        position: absolute;
+                        top: -15px;
+                        left: 133px;
+                        height: 50px;
+                        width: 50px;
+                        z-index: 1;
+                    }
+
+                    &:nth-child(3) {
+                        background-color: white;
+                        position: absolute;
+                        top: -15px;
+                        right: 133px;
+                        height: 50px;
+                        width: 50px;
+                        z-index: 1;
+                    }
+
+                    &:last-child {
+                        background-color: $dog--pink-color;
+                        position: absolute;
+                        top: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    &--bottom {
+        position: relative;
+        /* background-color: red; */
+        bottom: -138px;
+        height: 55%;
+        width: 100%;
+
+        &--hands {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            z-index: 5;
+
+            &-left {
+                background-color: $dog--blue-color;
+                height: 73px;
+                width: 73px;
+                border-radius: 50%;
+                box-shadow: 35px 20px 0px -20px $dog--blue-color,
+                    15px 35px 0px -20px $dog--blue-color,
+                    -10px 36px 0px -20px $dog--blue-color;
+                animation: handsUpNDown 5s linear 0s 2 normal none;
+            }
+
+            &-right {
+                background-color: $dog--greengray-color;
+                height: 73px;
+                width: 73px;
+                border-radius: 50%;
+                box-shadow: -35px 20px 0px -20px $dog--greengray-color,
+                    -15px 35px 0px -20px $dog--greengray-color,
+                    10px 36px 0px -20px $dog--greengray-color;
+                animation: handsUpNDown 5s linear 2.5s 2 normal none;
+            }
+        }
+
+        &--scroll {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: -20px;
+
+            &-top {
+                background-color: $dog--red-color;
+                width: 85%;
+                height: 30px;
+                border-radius: 25px;
+            }
+
+            &-paper {
+                background-color: $white;
+                width: 75%;
+                height: 260px;
+                border-radius: 0 0 70px 0;
+
+                animation: paperRoll 5s ease 0s 1 normal forwards;
+            }
+        }
+
+        &--feet {
+            position: relative;
+            //background-color: red;
+            height: 25px;
+            top: -40px;
+            display: flex;
+            justify-content: space-around;
+
+            &-left {
+                background-color: $dog--greengray-color;
+                height: 73px;
+                width: 73px;
+                border-radius: 50%;
+                box-shadow: 35px 20px 0px -20px $dog--greengray-color,
+                    15px 35px 0px -20px $dog--greengray-color,
+                    -10px 36px 0px -20px $dog--greengray-color;
+                animation: feetRotate 5s linear 0s 2 normal none;
+            }
+
+            &-right {
+                background-color: $dog--blue-color;
+                height: 73px;
+                width: 73px;
+                border-radius: 50%;
+                box-shadow: -35px 20px 0px -20px $dog--blue-color,
+                    -15px 35px 0px -20px $dog--blue-color,
+                    10px 36px 0px -20px $dog--blue-color;
+                animation: feetRotate 5s linear 1s 2 reverse none;
+
+            }
+        }
+    }
+}
+
+@keyframes paperRoll {
+    0% {
+        transform: scaleY(0);
+        transform-origin: 100% 0%;
+    }
+
+    100% {
+        transform: scaleY(1);
+        transform-origin: 100% 0%;
+    }
+}
+
+@keyframes handsUpNDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes feetRotate {
+    0% {
+        transform: rotate(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: rotate(30deg);
+        transform-origin: top;
+    }
+
+    0% {
+        transform: rotate(0deg);
+        transform-origin: top;
+    }
+}
