@@ -351,8 +351,29 @@ body, header, main, footer, section, article, div {
   font-family: "Oswald", sans-serif;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 p, span {
   font-family: "Raleway", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-inline-start: 0;
+}
+ul li {
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+  grid-template-columns: 2fr 2fr;
+  row-gap: 1rem;
+}
+ul li > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 a {
@@ -364,19 +385,25 @@ a:hover {
   text-decoration: overline;
 }
 
-section {
+main {
   height: 100vh;
   width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+}
 
 .page--container {
-  position: fixed;
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: url("./img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -401,98 +428,18 @@ footer ul li {
   margin-left: 3rem;
 }
 
-#left {
+header {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.box--container {
-  width: 90%;
-  height: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.box--container--welcome {
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 15px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-.box--container--content {
-  height: calc(100% - 200px);
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 15px;
-  padding: 1.5rem;
-  overflow-y: scroll;
-  scroll-snap-type: y proximity;
-}
-.box--container--content > div {
-  scroll-snap-align: center;
-  height: 100%;
-}
-.box--container--content::-webkit-scrollbar {
-  display: none;
-}
-.box--container--content--about {
-  display: flex;
-  margin-bottom: 13rem;
-}
-.box--container--content--about-text > div {
-  display: flex;
-  flex-direction: column;
-}
-.box--container--content--about-portrait {
-  min-width: 50%;
-  background-image: url(".\\img\\DrowsyTigerPromo.jpg");
-  background-position: top center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  margin-left: 1rem;
-  margin-top: 1.5rem;
-}
-.box--container--content--education {
-  margin-top: 2rem;
-}
-.box--container--content--portfolio-projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap: 1rem 1rem;
-  margin: 1rem;
-}
-.box--container--content--portfolio-projects > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 170px;
-  width: 170px;
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 0 0 25%;
-}
-
-.card {
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: all 0.8s ease-in-out;
-  color: transparent;
-}
-.card:hover {
-  box-shadow: #26394d 0px 20px 30px -10px;
-  height: 220px;
-  color: #ffffff;
-  transition: all 0.8s ease-in-out;
-}
-
 .dog--container {
-  height: 640px;
+  height: 340px;
   width: 360px;
   background-color: #EC5B30;
-  border-radius: 8px 8px 50px 50px;
+  border-radius: 8px 8px 0px 0px;
 }
 .dog--container--top {
   display: flex;
@@ -623,6 +570,62 @@ footer ul li {
   bottom: -138px;
   height: 55%;
   width: 100%;
+  /*  &--scroll {
+       position: relative;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       top: -20px;
+
+       &-top {
+           background-color: $dog--red-color;
+           width: 85%;
+           height: 30px;
+           border-radius: 25px;
+       }
+
+       &-paper {
+           background-color: $white;
+           width: 75%;
+           height: 260px;
+           border-radius: 0 0 70px 0;
+
+           animation: paperRoll 5s ease 0s 1 normal forwards;
+       }
+   }
+
+   &--feet {
+       position: relative;
+       //background-color: red;
+       height: 25px;
+       top: -40px;
+       display: flex;
+       justify-content: space-around;
+
+       &-left {
+           background-color: $dog--greengray-color;
+           height: 73px;
+           width: 73px;
+           border-radius: 50%;
+           box-shadow: 35px 20px 0px -20px $dog--greengray-color,
+               15px 35px 0px -20px $dog--greengray-color,
+               -10px 36px 0px -20px $dog--greengray-color;
+           animation: feetRotate 5s linear 0s 2 normal none;
+       }
+
+       &-right {
+           background-color: $dog--blue-color;
+           height: 73px;
+           width: 73px;
+           border-radius: 50%;
+           box-shadow: -35px 20px 0px -20px $dog--blue-color,
+               -15px 35px 0px -20px $dog--blue-color,
+               10px 36px 0px -20px $dog--blue-color;
+           animation: feetRotate 5s linear 1s 2 reverse none;
+
+       }
+   } */
 }
 .dog--container--bottom--hands {
   position: relative;
@@ -645,50 +648,6 @@ footer ul li {
   border-radius: 50%;
   box-shadow: -35px 20px 0px -20px #A8C7D1, -15px 35px 0px -20px #A8C7D1, 10px 36px 0px -20px #A8C7D1;
   animation: handsUpNDown 5s linear 2.5s 2 normal none;
-}
-.dog--container--bottom--scroll {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  top: -20px;
-}
-.dog--container--bottom--scroll-top {
-  background-color: #8A2846;
-  width: 85%;
-  height: 30px;
-  border-radius: 25px;
-}
-.dog--container--bottom--scroll-paper {
-  background-color: #ffffff;
-  width: 75%;
-  height: 260px;
-  border-radius: 0 0 70px 0;
-  animation: paperRoll 5s ease 0s 1 normal forwards;
-}
-.dog--container--bottom--feet {
-  position: relative;
-  height: 25px;
-  top: -40px;
-  display: flex;
-  justify-content: space-around;
-}
-.dog--container--bottom--feet-left {
-  background-color: #A8C7D1;
-  height: 73px;
-  width: 73px;
-  border-radius: 50%;
-  box-shadow: 35px 20px 0px -20px #A8C7D1, 15px 35px 0px -20px #A8C7D1, -10px 36px 0px -20px #A8C7D1;
-  animation: feetRotate 5s linear 0s 2 normal none;
-}
-.dog--container--bottom--feet-right {
-  background-color: #99E7FB;
-  height: 73px;
-  width: 73px;
-  border-radius: 50%;
-  box-shadow: -35px 20px 0px -20px #99E7FB, -15px 35px 0px -20px #99E7FB, 10px 36px 0px -20px #99E7FB;
-  animation: feetRotate 5s linear 1s 2 reverse none;
 }
 
 @keyframes paperRoll {
@@ -725,6 +684,88 @@ footer ul li {
     transform: rotate(0deg);
     transform-origin: top;
   }
+}
+#main {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100vh;
+}
+
+.box--container {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box--container--content {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+}
+.box--container--content > div {
+  scroll-snap-align: center;
+  height: 100%;
+}
+.box--container--content::-webkit-scrollbar {
+  display: none;
+}
+.box--container--content--about {
+  display: flex;
+  margin-bottom: 13rem;
+}
+.box--container--content--about-text > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.box--container--content--about-portrait {
+  min-width: 50%;
+  height: 100%;
+  background-image: url(".\\img\\DrowsyTigerPromo.jpg");
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+}
+.box--container--content--education {
+  margin-top: 2rem;
+}
+.box--container--content--portfolio-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem 1rem;
+  margin: 1rem;
+}
+.box--container--content--portfolio-projects > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 170px;
+  width: 170px;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 0 0 25%;
+}
+
+.card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.8s ease-in-out;
+  color: transparent;
+}
+.card:hover {
+  box-shadow: #26394d 0px 20px 30px -10px;
+  height: 220px;
+  color: #ffffff;
+  transition: all 0.8s ease-in-out;
 }
 
 /*# sourceMappingURL=index.css.map */
