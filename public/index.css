@@ -356,6 +356,34 @@ div {
   box-sizing: border-box;
   font-family: "Oswald", sans-serif;
 }
+body::-webkit-scrollbar,
+header::-webkit-scrollbar,
+main::-webkit-scrollbar,
+footer::-webkit-scrollbar,
+section::-webkit-scrollbar,
+article::-webkit-scrollbar,
+div::-webkit-scrollbar {
+  display: none;
+}
+
+.page--container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("./img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  overflow-x: hidden;
+}
+.page--container::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
 
 h2 {
   font-size: 2.5rem;
@@ -408,28 +436,16 @@ main {
   }
 }
 
-.page--container {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url("./img/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-.page--container::-webkit-scrollbar {
-  display: none;
-}
-
 section {
   display: flex;
   flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid black;
 }
 
 footer {
   background-color: #6E8894;
-  position: absolute;
   bottom: 0;
   width: 100vw;
   height: 50px;
@@ -708,6 +724,19 @@ header {
     transform-origin: top;
   }
 }
+#welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.education--content {
+  /* timeline kommt hierhin */
+}
+
 #main {
   background-color: rgba(255, 255, 255, 0.5);
 }
@@ -718,7 +747,7 @@ header {
   padding: 2rem;
   flex-direction: column;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
 }
 #about {
   display: flex;
@@ -727,10 +756,12 @@ header {
 
 .about--content {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
+}
+.about--content div > * {
+  display: flex;
 }
 .about--content-portrait {
   min-width: 50%;
