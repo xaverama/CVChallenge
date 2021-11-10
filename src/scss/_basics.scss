@@ -57,7 +57,13 @@ a {
 
 main {
     //height: $main-height-desktop;
+    
     width: $main-width-desktop;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
 
     @media only screen and (max-width: 600px) {
 
@@ -66,15 +72,15 @@ main {
     }
 
 
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .page--container {
-    //position: fixed;
+    
     width: 100vw;
-    height: 100vh;
+    //height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +88,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    overflow-y: scroll;
+    //overflow-y: scroll;
 
     &::-webkit-scrollbar {
             display: none;
@@ -95,6 +101,7 @@ section{
     display: flex;
     flex-direction: column;
     //height: 50vh;
+    
 }
 
 footer {

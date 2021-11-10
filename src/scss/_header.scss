@@ -1,8 +1,10 @@
 header{
-    width: 50vw;
+    position: sticky;
+    top: -290px;
+    width: 100vw;
     display: flex;
     justify-content: center;
-    background-color: $transparent;
+    //background-color: $white;
     @media only screen and (max-width: 600px) {
             
                 width: $main-width-mobile;
