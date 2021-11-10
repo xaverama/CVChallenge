@@ -3,6 +3,11 @@ header{
     display: flex;
     justify-content: center;
     background-color: $transparent;
+    @media only screen and (max-width: 600px) {
+            
+                width: $main-width-mobile;
+            
+        }
 }
 .dog--container {
     

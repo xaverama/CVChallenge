@@ -1,0 +1,12 @@
+.skills--content {
+    display: flex;
+   
+    //flex-wrap: wrap;
+    
+    height: 100%;
+    width: 100%;
+
+    & li:nth-child(even){
+        margin-left: 2rem;
+    }
+}
