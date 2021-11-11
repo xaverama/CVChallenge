@@ -84,12 +84,12 @@
                 <section id="skills">
                     <h2>Skills</h2>
                     <div class="skills--content">
-                        <div x-data="SKILLS_DATA">
+                        <div x-data="SKILLS_DATA" class="skills--content--items">
                             <template x-for="skill in SKILLS_DATA">
-                                <ul>
-                                    <li><img :src="`./img/skills/${skill.icon}`" alt=""></li>
-                                    <li x-text="skill.skill"></li>
-                                </ul>
+                                <div class="skills--content--items-item">
+                                    <div><img :src="`./img/skills/${skill.icon}`" alt=""></div>
+                                    <div x-text="skill.skill"></div>
+                                </div>
                             </template>
                         </div>
                     </div>

@@ -717,6 +717,7 @@ header {
   padding-top: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid black;
+  text-align: center;
 }
 
 .education--content ul {
@@ -778,11 +779,20 @@ header {
 
 .skills--content {
   display: flex;
+  justify-content: center;
+  display: flex;
   height: 100%;
   width: 100%;
 }
-.skills--content li:nth-child(even) {
-  margin-left: 2rem;
+.skills--content--items {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+}
+.skills--content--items-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .portfolio--content-projects {

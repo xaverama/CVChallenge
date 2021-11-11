@@ -1,0 +1,51 @@
+footer {
+    background-color: $dog--darkgray-color;
+    //position: absolute;
+    bottom: 0;
+    width: 100vw;
+    
+    padding: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer--content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.button {
+    
+  background-color: white; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #e7e7e7;
+}
+
+.button1:hover {
+  background-color: #e7e7e7;
+}
+
+.impressum{
+    display: flex;
+    flex-direction: column;
+
+}

@@ -1,12 +1,26 @@
 .skills--content {
     display: flex;
+    justify-content: center;
+
+    &--items{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 1rem;
+        
+
+        &-item{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+    }
+    display: flex;
    
     //flex-wrap: wrap;
     
     height: 100%;
     width: 100%;
 
-    & li:nth-child(even){
-        margin-left: 2rem;
-    }
+    
 }
