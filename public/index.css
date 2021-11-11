@@ -714,7 +714,8 @@ header {
 }
 .education--content ul:hover {
   box-shadow: #26394d 0px 20px 30px -10px;
-  transition: all 0.8s ease-in-out;
+  transition: 0.4s ease-in-out;
+  border-top: 4px solid #6E8894;
 }
 .education--content ul:nth-child(even) {
   align-items: flex-end;
