@@ -1,10 +1,10 @@
 footer {
-    background-color: $dog--darkgray-color;
-    //position: absolute;
+    background-color: $dog--lightgray-color;
+
     bottom: 0;
     width: 100vw;
     
-    padding: 2rem;
+    padding: 1rem;
 
     display: flex;
     justify-content: center;
@@ -14,14 +14,14 @@ footer {
 
 .footer--content{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     gap: 1rem;
     
 }
 .button {
     
-  background-color: white; /* Green */
+  background-color: white; 
   border: none;
   color: white;
   padding: 16px 32px;

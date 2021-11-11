@@ -50,6 +50,9 @@ h1{
 
 h2 {
     font-size: 2.5rem;
+    border: 0.5rem dotted black;
+    text-align: center;
+    padding: 2rem 0rem;
 }
 
 p,
@@ -107,23 +110,3 @@ section{
     
 }
 
-footer {
-    background-color: $dog--darkgray-color;
-    //position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 50px;
-
-    display: flex;
-    justify-content: space-around;
-
-    & ul {
-        display: flex;
-        justify-content: space-between;
-        list-style: none;
-
-        & li {
-            margin-left: 3rem;
-        }
-    }
-}
