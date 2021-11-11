@@ -70,10 +70,10 @@
                 <section id="about">
                     <h2>About Me</h2>
                     <div class="about--content">
-                        <div x-data="ABOUTME_DATA">
-                            <h3 class="personalInfo" x-text="ABOUTME_DATA.name"></h3>
-                            <h3 class="personalInfo" x-text="ABOUTME_DATA.surname"></h3>
-                            <h3 class="personalInfo" x-text="ABOUTME_DATA.birthday"></h3>
+                        <div x-data="ABOUTME_DATA" class="about--content-items">
+                            <span class="personalInfo" x-text="ABOUTME_DATA.name"></span>
+                            <span class="personalInfo" x-text="ABOUTME_DATA.surname"></span>
+                            <span class="personalInfo" x-text="ABOUTME_DATA.birthday"></span>
                             <span x-text="ABOUTME_DATA.description"></span>
                         </div>
                         <div class="about--content-portrait"></div>

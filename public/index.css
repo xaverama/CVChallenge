@@ -748,8 +748,14 @@ header {
   height: 100%;
   width: 100%;
 }
+.about--content-items :last-child {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 8px;
+}
 .about--content div > * {
   display: flex;
+  padding-bottom: 0.5rem;
 }
 .about--content-portrait {
   min-width: 50%;
