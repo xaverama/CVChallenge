@@ -1,3 +1,38 @@
-.education--content{
-    /* timeline kommt hierhin */
+.education--content {
+
+    & ul {
+
+
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1rem;
+       
+
+        
+
+        &:hover {
+            
+            //color: $white;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+            transition: all 0.8s ease-in-out;
+            
+
+        }
+
+        &:nth-child(even) {
+            align-items: flex-end;
+        }
+
+        & li {
+            width: 50%;
+            border-left: 2px solid $dog--darkgray-color;
+            padding-left: 1rem;
+            
+            
+
+
+        }
+    }
 }

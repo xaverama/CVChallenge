@@ -201,24 +201,16 @@
                     <div class="education--content">
 
                         <div x-data="EDUCATION_DATA">
-                            <table>
-                                <thead>
-                                    <td>Start</td>
-                                    <td>End</td>
-                                    <td>Name</td>
-                                    <td>Description</td>
-                                    <td>Location</td>
-                                </thead>
                                 <template x-for="education in EDUCATION_DATA">
-                                    <tr>
-                                        <td x-text="education.start"></td>
-                                        <td x-text="education.end"></td>
-                                        <td x-text="education.name"></td>
-                                        <td x-text="education.description"></td>
-                                        <td x-text="education.location"></td>
-                                    </tr>
+                                    <ul>
+                                        <li x-text="education.end"></li>
+                                        <li x-text="education.start"></li>
+                                        <li x-text="education.name"></li>
+                                        <li x-text="education.description"></li>
+                                        <li x-text="education.location"></li>
+                                    </ul>
                                 </template>
-                            </table>
+                            
                         </div>
                     </div>
 
