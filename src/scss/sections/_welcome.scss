@@ -2,8 +2,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid black;
     text-align: center;
+
+    h1{
+        animation: hello 2s ease 0s 1 normal forwards;
+    }
+    span{
+        font-size: 2rem;
+        opacity: 0;
+        animation: hello 2s ease 2s 1 normal forwards;
+    }
+}
+
+@keyframes hello {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

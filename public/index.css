@@ -700,12 +700,28 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid black;
   text-align: center;
 }
+#welcome h1 {
+  animation: hello 2s ease 0s 1 normal forwards;
+}
+#welcome span {
+  font-size: 2rem;
+  opacity: 0;
+  animation: hello 2s ease 2s 1 normal forwards;
+}
 
+@keyframes hello {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .education--content ul {
   list-style: none;
   display: flex;
@@ -842,7 +858,7 @@ header {
   }
 }
 footer {
-  background-color: #E0F2E9;
+  background-color: #6E8894;
   bottom: 0;
   width: 100vw;
   padding: 1rem;
