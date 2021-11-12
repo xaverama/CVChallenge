@@ -119,6 +119,7 @@
                         <div x-data="PROJECTS_DATA" class="portfolio--content-projects">
                             <template x-for="project in PROJECTS_DATA">
                                 <div class="card" :style="`background-image: url('img/projects/${project.picture}')`">
+                                    <div class="card--text" x-text="project.date"></div>
                                     <div class="card--text" x-text="project.type"></div>
                                     <div class="card--text" x-text="project.name"></div>
                                     <div class="card--text" x-text="project.description"></div>
@@ -147,13 +148,13 @@
                         <p> 1170 Wien</p>
                     </div>
                 </div>
-                <div x-data="{ open: false }">
-                    <button class="button button1" @click="open = ! open">Contact</button>
+                <div class="impressum" x-data="{ open: false }">
+                    <button class="button button1" @click="open = ! open">Datenschutzbestimmungen</button>
 
-                    <div x-show="open" x-transition:enter="transition ease-out duration-300"
+                    <div  x-show="open" x-transition:enter="transition ease-out duration-2000"
                         x-transition:enter-start="opacity-0 transform scale-90"
                         x-transition:enter-end="opacity-100 transform scale-100"
-                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave="transition ease-in duration-2000"
                         x-transition:leave-start="opacity-100 transform scale-100"
                         x-transition:leave-end="opacity-0 transform scale-90">
                         <p>Xaver Gruber</p>
@@ -253,6 +254,7 @@
         ];
         const PROJECTS_DATA = [{
                 type: "webapp",
+                date: "2021",
                 name: "xaver.com",
                 picture: "beach.jpg",
                 description: "this is a   blabla",
@@ -260,6 +262,7 @@
             },
             {
                 type: "blogsite",
+                date: "2021",
                 name: "nkl.com",
                 picture: "banana.jpg",
                 description: "this is a site  blabla",
@@ -267,6 +270,7 @@
             },
             {
                 type: "ecommerce",
+                date: "2021",
                 name: "löll.com",
                 picture: "wireframing.jpg",
                 description: "this  a site  blabla",
@@ -274,6 +278,7 @@
             },
             {
                 type: "blogsite",
+                date: "2021",
                 name: "nkl.com",
                 picture: "computer.jpg",
                 description: "this is a site  blabla",
@@ -281,6 +286,7 @@
             },
             {
                 type: "blogsite",
+                date: "2021",
                 name: "nkl.com",
                 picture: "develop.jpg",
                 description: "this is a   blabla",
@@ -288,6 +294,7 @@
             },
             {
                 type: "blogsite",
+                date: "2021",
                 name: "nkl.com",
                 picture: "ecommerce.jpg",
                 description: "this is a  about blabla",
@@ -295,6 +302,7 @@
             },
             {
                 type: "blogsite",
+                date: "2021",
                 name: "nkl.com",
                 picture: "skater.jpg",
                 description: "this is a  about blabla",
@@ -302,6 +310,7 @@
             },
             {
                 type: "blogsite",
+                date: "2021",
                 name: "nkl.com",
                 picture: "flowers.jpg",
                 description: "this is a  about blabla",
@@ -309,6 +318,7 @@
             },
             {
                 type: "blogsite",
+                date: "2021",
                 name: "nkl.com",
                 picture: "purple.jpg",
                 description: "this is a  about blabla",
