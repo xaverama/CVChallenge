@@ -24,18 +24,7 @@
 
             flex: 1 0 25%;
         }
-
-
     }
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -45,30 +34,23 @@
     background-size: cover;
     transition: all 0.8s ease-in-out;
     color: transparent;
-
     @media only screen and (max-width: 600px) {
 
         color: $color--text-light;
         animation: boxShadow 10s ease-in-out 0s infinite normal forwards;
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-
-
     }
-
     &--text {
         display: flex;
         flex-direction: column;
-
-
     }
-
     &:hover {
+        display: flex;
         height: 220px;
         color: $white;
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
         transition: all 0.8s ease-in-out;
-
     }
 }
 
@@ -85,5 +67,23 @@
     25%,
     75% {
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+}
+
+ .share{
+    img{
+        height: 2rem;
+        padding: 0.5rem;
+        border-radius: 50%;
+        opacity: 1;
+    }
+
+    
+    
+    a{
+        :hover{
+
+            background-color: $transparent;
+        }
     }
 }
